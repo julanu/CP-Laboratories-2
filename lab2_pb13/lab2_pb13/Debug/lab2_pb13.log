@@ -1,0 +1,5 @@
+﻿  lab2_pb13_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab2_pb13\lab2_pb13\lab2_pb13_julamarius.cpp(16): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\jula\desktop\cp-lab2\lab2_pb13\lab2_pb13\lab2_pb13_julamarius.cpp(30): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\jula\desktop\cp-lab2\lab2_pb13\lab2_pb13\lab2_pb13_julamarius.cpp(38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  lab2_pb13.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\lab2_pb13\Debug\lab2_pb13.exe

@@ -1,0 +1,4 @@
+﻿  lab2_pb12_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab2_pb12\lab2_pb12\lab2_pb12_julamarius.cpp(18): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\jula\desktop\cp-lab2\lab2_pb12\lab2_pb12\lab2_pb12_julamarius.cpp(42): warning C4715: 'compute': not all control paths return a value
+  lab2_pb12.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\lab2_pb12\Debug\lab2_pb12.exe
