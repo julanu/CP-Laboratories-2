@@ -1,0 +1,3 @@
+﻿  lab2_pb5_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab2_pb5\lab2_pb5\lab2_pb5_julamarius.cpp(16): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\jula\desktop\cp-lab2\lab2_pb5\lab2_pb5\lab2_pb5_julamarius.cpp(23): error C2660: '_getche': function does not take 1 arguments
