@@ -1,0 +1,52 @@
+/*
+Date: 5/03/2018
+Author: Jula Marius
+Problem: the minimum of a 10 float numbers from a string (implicit values or from the KB) using a function
+		with a variable number of parameters. The first 7 values will be considered initially, next the last 3 and at the
+		end these 2 values
+*/
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <conio.h>
+
+int minim(int *, ...);
+
+int main()
+{
+	int tab[10], i;
+	printf("\nEnter 10 integer numbers: ");
+	for (i = 0; i < 10; i++)
+		scanf("%d", &tab[i]);
+
+	printf("\nThe minimum value is: %d", minim(tab));
+
+	_getch();
+}
+
+int minim(int *tab, ...)
+{
+	int i, min, min1, min2;
+	//we set the minimum values for the array
+	min1 = tab[0];
+	min2 = tab[7];
+
+	//we start the comparisons
+	for (i = 1; i <= 6; i++)
+	{
+		if (tab[i] < min1)
+			min1 = tab[i];
+	}
+	for (i = 7; i < 10; i++)
+	{
+		if (tab[i] < min2)
+			min2 = tab[i];
+	}
+	if (min1 < min2)
+		min = min1;
+	else
+		min = min2;
+	return min;
+}
+

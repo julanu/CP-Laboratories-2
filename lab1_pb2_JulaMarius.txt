@@ -1,0 +1,49 @@
+/*
+	Date: 5/03/2018
+	Author: Jula Marius
+	Problem: inline function min() that determines and display the minimum among 2(3) numbers
+
+*/
+
+#define  _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <conio.h>
+
+inline int min_3values(int, int, int);
+inline int min_2values(int, int);
+
+void main(void)
+{
+	int a, b, c;
+	printf("\nPlease enter the 3 numbers: ");
+	scanf("%d%d%d", &a, &b, &c);
+	printf("\nThe minimum is determined with an inline function");
+	printf("\nMin for 2 values %d", min_2values(a, b));
+	printf("\nMin for 3 values %d", min_3values(a, b, c));
+
+	_getch();
+}
+
+inline int min_2values(int a,int b) 
+{
+	if (a < b)
+		return  a;
+	return  b;
+}
+
+inline  int  min_3values(int a,int b,int c)
+{
+	int  min;
+	if(a < b)
+		if (c < a)
+			min = c;
+		else
+			min = a;
+	else
+		if (c < b)
+			min = c;
+		else
+			min = b;
+	return  min;
+}

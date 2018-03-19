@@ -1,0 +1,44 @@
+/*
+Date: 5/03/2018
+Author: Jula Marius
+Problem: a function with 3 implicit parameters (int, float, double) that will return the square root of the value
+*/
+
+#define  _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+
+double square_root(int, int, int);
+double square_root(int &, int);
+double square_root(int *);
+
+void main(void)
+{
+	int a;
+	printf("\nPlease enter the number: ");
+	scanf("%d", &a);
+
+	printf("\nThe result is %.2lf", square_root(a, 1, 2));
+	printf("\nThe result is %.2lf", square_root(&a));
+	printf("\nThe result is %.2lf", square_root(a, 3));
+
+
+	_getch();
+}
+
+double square_root(int a, int f, int g)
+{
+	return sqrt(a);
+}
+
+double square_root(int *a)
+{
+	return sqrt(*a);
+}
+
+double square_root(int &a, int b)
+{
+	return sqrt(a);
+}

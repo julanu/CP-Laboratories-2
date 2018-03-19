@@ -1,0 +1,30 @@
+/*
+Date: 5/03/2018
+Author: Jula Marius
+Problem: a function with 3 implicit parameters (int, float, double) that returns the product of the values
+*/
+
+#define  _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <conio.h>
+
+double product(int a = 2, float b = 2.2, double c = 3.2);
+
+void main(void)
+{
+
+	printf("\nThe result is %.2lf", product());
+	printf("\nThe result is %.2lf", product(1));
+	printf("\nThe result is %.2lf", product(1.31, 2.1));	
+	printf("\nThe result is %.2lf", product(1.31, 2.22, 3.2));
+
+
+	_getch();
+}
+
+double product(int a, float b, double c)
+{
+	return (double)(a * b * c);
+}
+

@@ -1,0 +1,28 @@
+/*
+Date: 5/03/2018
+Author: Jula Marius
+Problem: macro function MAX that determines and display the maximum among 2(3) numbers introduced
+
+*/
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <conio.h>
+
+
+#define MAX2(a, b) ((a)>(b) ? (a) : (b))
+#define MAX22(a, b, c) ((MAX2(a,b))>(c)?(MAX2(a,b)):(c))
+
+
+
+void main()
+{
+	int a, b, c;
+	printf("\nEnter the numbers: ");
+	scanf("%d%d%d", &a, &b, &c);
+	printf("\nMax (2 valori) = %d", MAX2(a, b));
+	printf("\nMax (3 valori) = %d", MAX22(a, b, c));
+
+	_getch();
+}
