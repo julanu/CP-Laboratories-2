@@ -1,0 +1,6 @@
+﻿  lab1_pb7_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab1_pb7\lab1_pb7\lab1_pb7_julamarius.cpp(13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\jula\desktop\cp-lab2\lab1_pb7\lab1_pb7\lab1_pb7_julamarius.cpp(14): error C2065: '_FILE_': undeclared identifier
+c:\users\jula\desktop\cp-lab2\lab1_pb7\lab1_pb7\lab1_pb7_julamarius.cpp(15): error C2065: '_DATE_': undeclared identifier
+c:\users\jula\desktop\cp-lab2\lab1_pb7\lab1_pb7\lab1_pb7_julamarius.cpp(15): error C2065: '_TIME_': undeclared identifier
+c:\users\jula\desktop\cp-lab2\lab1_pb7\lab1_pb7\lab1_pb7_julamarius.cpp(16): error C2065: '_LINE_': undeclared identifier
