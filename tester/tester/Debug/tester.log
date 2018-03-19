@@ -1,0 +1,3 @@
+﻿  test.cpp
+c:\users\jula\desktop\cp-lab2\tester\tester\test.cpp(43): warning C4715: 'cmmdc_n': not all control paths return a value
+  tester.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\tester\Debug\tester.exe
