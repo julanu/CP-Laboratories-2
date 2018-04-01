@@ -14,6 +14,9 @@
 #include <stdlib.h>
 #include <conio.h>
 
+void average(int *, int *, int *, int i, int j);
+void dispArr(int *, int);
+int cmp(const void *, const void *);
 
 void main(void)
 {
@@ -38,19 +41,48 @@ void main(void)
 		fscanf(g, "%d", &arr2[j++]);
 	}
 
+	average(arr, arr2, arr3, i, j);
+	qsort(arr3, sizeof(arr3) / sizeof(int), sizeof(int), cmp); //sorting
 
 	_getch();
 }
 
+//function to display a uni-dimensional table of integer values
+void dispArr(int *tab, int n)
+{
+	int i;
+	printf("\n");
+	for (i = 0; i < n; i++)
+		printf("%d ", tab[i]);
+}
+
 void average(int *arr, int *arr2, int *arr3, int i, int j)
 {
-	
+	int c, k;
 	if (i == j)
 	{
-		int c;
+
 		for (c = 0; c < i; c++)
 			arr3[c] = (arr2[c] + arr[c]) / 2;
 	}
 	else
-		if(i < )
+		if (i < j)
+		{
+			c = 0;
+			do
+			{
+
+				arr3[c] = (arr2[c] + arr[c]) / 2;
+				c++;
+			} while (!(c == i));
+			
+			for (k = i; k < j; k++)
+				arr3[k] = (arr2[k] + 0) / 2;
+		}
+}
+
+//function to compare two integers
+int cmp(const void * a, const void * b)
+{
+	return (*(int*)a - *(int*)b);
 }
