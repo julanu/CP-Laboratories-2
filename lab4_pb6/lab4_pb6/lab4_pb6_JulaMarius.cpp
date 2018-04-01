@@ -40,12 +40,12 @@ void main()
 	printf("\nPlease enter the string of chars(all chars must be entered at once): \n");
 	scanf("%s", p);
 	copyStr(str, str_1, str_2, n, m);//copying 
-	if (p) free(p); //we empty the initial string
-	p = (char *)malloc(m * sizeof(char)); //re-alloc the memory for the merge sort
 	//sorting the substrings
 	printf("\nInitial substrings and the sorted versions\n");
 	printStr(p1); sort(p1); printStr(p1);
 	printStr(p2); sort(p2); printStr(p2);
+	if (p) free(p); //we empty the initial string
+	p = (char *)malloc(m * sizeof(char)); //re-alloc the memory for the merge sort
 	merge(p1, p2, p);
 	printf("\nAfter merging the substring");
 	printStr(p);
