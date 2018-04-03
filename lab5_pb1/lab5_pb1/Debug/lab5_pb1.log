@@ -1,0 +1,4 @@
+﻿  lab_pb1_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab5_pb1\lab5_pb1\lab_pb1_julamarius.cpp(46): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\jula\desktop\cp-lab2\lab5_pb1\lab5_pb1\lab_pb1_julamarius.cpp(47): warning C4101: 'c2': unreferenced local variable
+  lab5_pb1.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\lab5_pb1\Debug\lab5_pb1.exe

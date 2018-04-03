@@ -1,0 +1,8 @@
+﻿  Source.cpp
+c:\users\jula\desktop\cp-lab2\lab5_test\lab5_test\source.cpp(99): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\jula\desktop\cp-lab2\lab5_test\lab5_test\source.cpp(112): error C2275: 'Point': illegal use of this type as an expression
+  c:\users\jula\desktop\cp-lab2\lab5_test\lab5_test\source.cpp(76): note: see declaration of 'Point'
+c:\users\jula\desktop\cp-lab2\lab5_test\lab5_test\source.cpp(112): error C2228: left of '.raza' must have class/struct/union
+c:\users\jula\desktop\cp-lab2\lab5_test\lab5_test\source.cpp(112): warning C4473: 'printf' : not enough arguments passed for format string
+  c:\users\jula\desktop\cp-lab2\lab5_test\lab5_test\source.cpp(112): note: placeholders and their parameters expect 1 variadic arguments, but 0 were provided
+  c:\users\jula\desktop\cp-lab2\lab5_test\lab5_test\source.cpp(112): note: the missing variadic argument 1 is required by format string '%.2f'
