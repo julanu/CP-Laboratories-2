@@ -39,7 +39,7 @@ public:
 	}
 };
 
-//prototypes using the struct
+//prototypes of the fcts using the struct
 double Perimeter(struct CircleStr *, int);
 double Area(struct CircleStr *, int);
 
