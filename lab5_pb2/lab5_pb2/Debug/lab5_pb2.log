@@ -1,3 +1,6 @@
 ﻿  lab5_pb2_JulaMarius.cpp
-c:\users\jula\desktop\cp-lab2\lab5_pb2\lab5_pb2\lab5_pb2_julamarius.cpp(107): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\jula\desktop\cp-lab2\lab5_pb2\lab5_pb2\lab5_pb2_julamarius.cpp(64): warning C4018: '<': signed/unsigned mismatch
+c:\users\jula\desktop\cp-lab2\lab5_pb2\lab5_pb2\lab5_pb2_julamarius.cpp(77): warning C4018: '<': signed/unsigned mismatch
+c:\users\jula\desktop\cp-lab2\lab5_pb2\lab5_pb2\lab5_pb2_julamarius.cpp(88): warning C4018: '<': signed/unsigned mismatch
+c:\users\jula\desktop\cp-lab2\lab5_pb2\lab5_pb2\lab5_pb2_julamarius.cpp(100): warning C4326: return type of 'main' should be 'int' instead of 'void'
   lab5_pb2.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\lab5_pb2\Debug\lab5_pb2.exe

@@ -1,0 +1,16 @@
+﻿  lab5_pb6_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(36): error C2511: 'Complex::Complex(void)': overloaded member function not found in 'Complex'
+  c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(13): note: see declaration of 'Complex'
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(37): error C2671: 'Complex::{ctor}': static member functions do not have 'this' pointers
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(37): error C2227: left of '->re' must point to class/struct/union/generic type
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(38): error C2671: 'Complex::{ctor}': static member functions do not have 'this' pointers
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(38): error C2227: left of '->im' must point to class/struct/union/generic type
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(59): error C2556: 'void Complex::setIm(double)': overloaded function differs only by return type from 'double Complex::setIm(double)'
+  c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(19): note: see declaration of 'Complex::setIm'
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(59): error C2371: 'Complex::setIm': redefinition; different basic types
+  c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(19): note: see declaration of 'Complex::setIm'
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(64): error C2556: 'void Complex::setRe(double)': overloaded function differs only by return type from 'double Complex::setRe(double)'
+  c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(18): note: see declaration of 'Complex::setRe'
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(64): error C2371: 'Complex::setRe': redefinition; different basic types
+  c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(18): note: see declaration of 'Complex::setRe'
+c:\users\jula\desktop\cp-lab2\lab5_pb6\lab5_pb6\lab5_pb6_julamarius.cpp(82): warning C4326: return type of 'main' should be 'int' instead of 'void'
