@@ -1,0 +1,5 @@
+﻿  lab6_pb4_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab6_pb4\lab6_pb4\lab6_pb4_julamarius.cpp(115): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\jula\desktop\cp-lab2\lab6_pb4\lab6_pb4\lab6_pb4_julamarius.cpp(118): error C2065: 'myfile': undeclared identifier
+c:\users\jula\desktop\cp-lab2\lab6_pb4\lab6_pb4\lab6_pb4_julamarius.cpp(118): error C2228: left of '.open' must have class/struct/union
+  c:\users\jula\desktop\cp-lab2\lab6_pb4\lab6_pb4\lab6_pb4_julamarius.cpp(118): note: type is 'unknown-type'
