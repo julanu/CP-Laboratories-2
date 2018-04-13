@@ -17,6 +17,8 @@ components of a date, call the member methods and then verify the obtained resul
 #include <fstream>
 using namespace std;
 
+ofstream file("test.txt");
+
 struct datan {
 	int day;
 	int month;
@@ -33,7 +35,7 @@ public:
 	int getMonth();
 	int getYear();
 	void isValid(Date& date);
-	void printToFile(FILE *, Date& date);
+	void printToFile(Date& date);
 };
 
 //Getter for the date struct
@@ -58,7 +60,6 @@ int Date::getMonth() {
 int Date::getYear() {
 	return d.year;
 }
-
 void Date::isValid(Date& date) {
 	int dd, mm, yy;
 	dd = date.getDay();
@@ -71,58 +72,68 @@ void Date::isValid(Date& date) {
 		if (mm >= 1 && mm <= 12)
 		{
 			//check days
-			if ((dd >= 1 && dd <= 31) 
+			if ((dd >= 1 && dd <= 31)
 				&& (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12))
-				cout <<"Date is valid.\n";
-			else if ((dd >= 1 && dd <= 30) 
+				cout << "Date is valid.\n";
+			else if ((dd >= 1 && dd <= 30)
 				&& (mm == 4 || mm == 6 || mm == 9 || mm == 11))
-				cout <<"Date is valid.\n";
+				cout << "Date is valid.\n";
 			else if ((dd >= 1 && dd <= 28) && (mm == 2))
-				cout <<"Date is valid.\n";
-			else if (dd == 29 && mm == 2 
+				cout << "Date is valid.\n";
+			else if (dd == 29 && mm == 2
 				&& (yy % 400 == 0 || (yy % 4 == 0 && yy % 100 != 0)))
-				cout <<"Date is valid.\n";
+				cout << "Date is valid.\n";
 			else
-				cout <<"Day is invalid.\n";
+				cout << "Day is invalid.\n";
 		}
 		else
 		{
-			cout <<"Month is not valid.\n";
+			cout << "Month is not valid.\n";
 		}
 	}
 	else
 	{
-		cout <<"Year is not valid.\n";
+		cout << "Year is not valid.\n";
 	}
 }
 
-void Date::printToFile(FILE *fs, Date& date) {
-	//to work on this
-	int j, i = date.getMonth(); //we use the index as an index for the months
-	std::fstream fs; // I DONT KNOW 
-	fs.open("test.txt", std::fstream::in | std::fstream::out | std::fstream::app); //THIS NEITHER
+void Date::printToFile(Date& date) {
+	int j, currDay, i, altIndex;
+	//alternate index to make the counter start from the current day
+	//currDay - curent day
+	// i - index used for the current month
+	// j - common index
+	i = date.getMonth();
+	currDay = date.getDay();
+	
 
-	if (fs.is_open())
-		for (j = i; j <= 12; i++)
-			if (j == 4 || j == 6 || j == 9 || j == 11)
-				for (int k = 1; k <= 31; k++)
-					fs << k << j << date.getYear() << endl;
-			else
-				for (int k = 1; k <= 30; k++)
-					fs << k << j << date.getYear() << endl;
-	fs.close();
+	for (j = i; j <= 12; i++)
+		if (j == 4 || j == 6 || j == 9 || j == 11) { //checking for months with 31 days
+			
+			if (j == i) altIndex = currDay; //if the month is the current one we start from the current day
+			else altIndex = 1; //otherwise we start from 1
+			for (int k = altIndex; k <= 31; k++)
+				file << k << "." << j << "." << date.getYear() << endl;
+			j++; //next month
+		}
+		else {
+			for (int k = altIndex; k <= 30; k++)//for months with 30 days
+				file << k << "." << j << "." << date.getYear() << endl;
+			j++; //next month
+		}
+	file.close(); //closing the file
 }
 
 void main()
 {
+	//notice that the file is global
 	Date obj;
-	FILE *f;
-	std::fstream fs; //fuck is this
-	fs.open("test.txt", std::fstream::in | std::fstream::out | std::fstream::app); //fuck is that
-
-	obj.setDate(1, 3, 2000);
+	int dd, mm, yy;
+	cout << "\nEnter the date as exemplified(day month year): ";
+	cin >> dd >> mm >> yy;
+	obj.setDate(dd, mm, yy);
 	obj.isValid(obj);
-	obj.printToFile(fs, obj); //aici tre dat file-ul
+	obj.printToFile(obj);
 	cin.ignore();
 	cin.get();
 }

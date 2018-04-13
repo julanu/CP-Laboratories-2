@@ -1,4 +1,3 @@
 ﻿  lab6_pb4_JulaMarius.cpp
-c:\users\jula\desktop\cp-lab2\lab6_pb4\lab6_pb4\lab6_pb4_julamarius.cpp(116): warning C4326: return type of 'main' should be 'int' instead of 'void'
-c:\users\jula\desktop\cp-lab2\lab6_pb4\lab6_pb4\lab6_pb4_julamarius.cpp(124): error C2664: 'void Date::printToFile(FILE *,Date &)': cannot convert argument 1 from 'std::fstream' to 'FILE *'
-  c:\users\jula\desktop\cp-lab2\lab6_pb4\lab6_pb4\lab6_pb4_julamarius.cpp(124): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\jula\desktop\cp-lab2\lab6_pb4\lab6_pb4\lab6_pb4_julamarius.cpp(128): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  lab6_pb4.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\lab6_pb4\Debug\lab6_pb4.exe
