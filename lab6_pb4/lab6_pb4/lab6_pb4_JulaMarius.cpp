@@ -96,29 +96,33 @@ void Date::isValid(Date& date) {
 	}
 }
 
-void Date::printToFile(FILE *f, Date& date) {
+void Date::printToFile(FILE *fs, Date& date) {
 	//to work on this
 	int j, i = date.getMonth(); //we use the index as an index for the months
-	ofstream myfile ("date.txt");
-	if (myfile.is_open())
+	std::fstream fs; // I DONT KNOW 
+	fs.open("test.txt", std::fstream::in | std::fstream::out | std::fstream::app); //THIS NEITHER
+
+	if (fs.is_open())
 		for (j = i; j <= 12; i++)
 			if (j == 4 || j == 6 || j == 9 || j == 11)
 				for (int k = 1; k <= 31; k++)
-					myfile << k << j << date.getYear() << endl;
+					fs << k << j << date.getYear() << endl;
 			else
 				for (int k = 1; k <= 30; k++)
-					myfile << k << j << date.getYear() << endl;
-	myfile.close();
+					fs << k << j << date.getYear() << endl;
+	fs.close();
 }
 
 void main()
 {
 	Date obj;
 	FILE *f;
-	myfile.open("test.txt");
+	std::fstream fs; //fuck is this
+	fs.open("test.txt", std::fstream::in | std::fstream::out | std::fstream::app); //fuck is that
+
 	obj.setDate(1, 3, 2000);
 	obj.isValid(obj);
-	obj.printToFile(f, obj);
+	obj.printToFile(fs, obj); //aici tre dat file-ul
 	cin.ignore();
 	cin.get();
 }
