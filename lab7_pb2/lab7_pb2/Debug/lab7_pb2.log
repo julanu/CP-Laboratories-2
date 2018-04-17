@@ -1,0 +1,4 @@
+﻿  lab7_pb2_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab7_pb2\lab7_pb2\lab7_pb2_julamarius.cpp(73): error C2065: 'tab': undeclared identifier
+c:\users\jula\desktop\cp-lab2\lab7_pb2\lab7_pb2\lab7_pb2_julamarius.cpp(87): error C2039: 'diffArrays': is not a member of 'RealNum'
+  c:\users\jula\desktop\cp-lab2\lab7_pb2\lab7_pb2\lab7_pb2_julamarius.cpp(14): note: see declaration of 'RealNum'
