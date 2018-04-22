@@ -68,7 +68,7 @@ Student::~Student() {
 //The mean value of the exams
 float Student::meanValue()
 {
-	float s;
+	float s = 0.0;
 	for (int i = 0; i < nr_marks; i++)
 		s += *(marks + i);
 	return (s / nr_marks);
@@ -107,7 +107,7 @@ void Student::setSurname(char *newSurname) {
 }
 
 
-void main()
+int main()
 {
 	int nrStuds;
 	cout << "\nEnter the number of students: ";
@@ -115,7 +115,7 @@ void main()
 
 	//we check if there are students who have arears
 	Student *group = new Student[nrStuds];
-	cout << "\n1 = no arears | -1 = arears";
+	cout << "\n1 = no arears | -1 = arears\n";
 	for (int i = 0; i < nrStuds; i++)
 		group[i].arearsStud();
 
@@ -132,26 +132,32 @@ void main()
 	for (int i = 0; i < nrStuds; i++) {
 		flag = 0;
 		for (int j = 1; j < nrStuds - count; j++) {
-			if (*(exams + j - 1) < *(exams + j)) {//it will be sorted decreasing
-				int temp;
+			if (*(exams + j - 1) > *(exams + j)) {//it will be sorted decreasing
+				float temp;
 				temp = *(exams + j - 1);
 				*(exams + j - 1) = *(exams + j);
 				*(exams + j) = temp;
 				//we must sort also the names, surnames of the students
 				//name
-				strcpy(buffer, *(group + j - 1)->getName());
-				*(group + j - 1).setName(*(group + j)->getName());
-				*(group + j).setName(buffer);
+				strcpy(buffer, (group + j - 1)->getName()); // no pointer to value needed for getName
+				group[j - 1].setName((group + j)->getName()); //can't use  *(group + j).setName(smth);
+				group[j].setName(buffer);
 				//surname
-				strcpy(buffer, *(group + j - 1)->getSurname());
-				*(group + j - 1).setSurname(*(group + j)->getSurname());
-				*(group + j).setSurname(buffer);
+				strcpy(buffer, (group + j - 1)->getSurname());
+				group[j - 1].setSurname((group + j)->getSurname()); //no pointer to value need for getSurname
+				group[j].setSurname(buffer);
 			}//if
 		}
 		count += 1;
 		if (!flag)
 			break;
 	}//bubble
-
+	cout << "\nTOP 3\n";
+	for (int i = 0; i < 3; i++) {
+		cout << i + 1 << "."<< group[i].getName() << " ";
+		cout << group[i].getSurname() << "\n";
+	}
+	cin.ignore();
+	cin.get();
 
 }
