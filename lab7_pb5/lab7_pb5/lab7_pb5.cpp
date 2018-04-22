@@ -32,6 +32,7 @@ public:
 	void  setName(char  *);
 	void  setSurname(char  *);
 	void  avgMark();
+	void setAvgMark(float);
 };
 
 //Constructor  w/  no  parameters
@@ -42,7 +43,7 @@ Student::Student() {
 	cin >> this->name;
 	cout << "\nSurname:  ";
 	cin >> this->surname;
-	cout << "Enter the group: ";
+	cout << "\nEnter the group: ";
 	cin >> this->group;
 	cout << "\nEnter  the  marks from the first semester:  ";
 	for (int i = 0; i < 6; i++) {
@@ -109,12 +110,11 @@ void  Student::setSurname(char  *newSurname) {
 	strcpy(surname, newSurname);
 }
 
-//Cmp function for qsort
-int compareByAvg(Student elem1, Student elem2) {
-	//Student ob1 = elem1;
-	//Student ob2 = elem2;
-	return ((int)((float)elem1.getAvg() - (float)elem2.getAvg()));
+//Setter for the avg mark
+void Student::setAvgMark(float newMark) {
+	this->avg_mark = newMark;
 }
+
 int  main()
 {
 	int  nrStuds;
@@ -122,9 +122,36 @@ int  main()
 	cin >> nrStuds;
 	Student  *group = new  Student[nrStuds];
 	//call the sorting function
-	qsort(group, nrStuds, sizeof(Student), compareByAvg(group[0], group[1]));
+	char  buffer[30];
+	//we  now  sort  the  group  of  students  based  on  the  exams  and  the  results,  simple  bubble  sort
+	int i, j, flag, count;
+	count = 0;  //iterations
+	for (i = 0; i < nrStuds; i++) {
+		flag = 0;
+		for (j = 1; j < nrStuds - count; j++) {
+			if (group[j - 1].getAvg() < group[j].getAvg()) {//it  will  be  sorted  decreasing
+				float  temp;
+				temp = group[j - 1].getAvg();
+				group[j - 1].setAvgMark(group[j].getAvg());
+				group[j].setAvgMark(temp);
+				//we  must  sort  also  the  names,  surnames  of  the  students
+				//name
+				strcpy(buffer, group[j - 1].getName());  //  no  pointer  to  value  needed  for  getName
+				group[j - 1].setName(group[j].getName());  //can't  use    *(group  +  j).setName(smth);
+				group[j].setName(buffer);
+				//surname
+				strcpy(buffer, group[j - 1].getSurname());
+				group[j - 1].setSurname(group[j].getSurname());  //no  pointer  to  value  need  for  getSurname
+				group[j].setSurname(buffer);
+			}//if
+		}
+		count += 1;
+		if (!flag)
+			break;
+	}//bubble
+	cout << "\nSorted students: ";
 	//display the sorted array
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < nrStuds; i++) {
 		cout << "\n" << group[i].getName();
 		cout << "\n" << group[i].getSurname();
 		cout << "\n" << group[i].getGroup();

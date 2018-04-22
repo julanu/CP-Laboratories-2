@@ -23,23 +23,33 @@ class Complex {
 	char *name;
 public:
 	Complex(float, float);
+	~Complex();
 	float getReal();
 	float getImag();
 	void setReal(float);
 	void setImag(float);
 	void setName(char *);
 	char* getName();
+	void sumC(Complex);
+	void diffC(Complex);
+	void divC(Complex);
+	void prodC(Complex);
 };
 
 //Constructor w/ implicit parameters
 Complex::Complex(float newReal = 1.0, float newImag = 1.0) {
 	this->real = newReal;
-	this->real = newImag;
+	this->imag = newImag;
 	name = new char[7];
 	strcpy(name, "test");
 }
 
 //Destructor 
+Complex::~Complex() {
+	real = 0.0;
+	imag = 0.0;
+	delete[] name;
+}
 //Getter for the real part
 float Complex::getReal(){
 	return real;
@@ -57,7 +67,7 @@ void Complex::setReal(float newReal) {
 
 //Setter for the imaginary part
 void Complex::setImag(float newImag) {
-	this->imag = newImag;
+	imag = newImag;
 }
 
 //Setter for the name
@@ -70,16 +80,65 @@ char* Complex::getName() {
 	return name;
 }
 
-//complex ob; ob = ob.ad_complex(ob[i])
-void sumC(Complex b) {
-	this->real += b.real;
-	this->imag += b.imag;
+//complex ob; ob = ob.ad_complex(ob[i]) Sum for a complex number
+void Complex::sumC(Complex b) {
+	real += b.getReal();
+	imag += b.getImag();
 }
 
+//Difference for a complex number
+void Complex::diffC(Complex b) {
+	real -= b.getReal();
+	imag -= b.getImag();
+}
+
+//Product for a complex number
+void Complex::prodC(Complex b) {
+	real *= b.getReal();
+	imag *= b.getImag();
+}
+
+//Division for a complex number
+void Complex::divC(Complex b) {
+	real /= b.getReal();
+	imag /= b.getImag();
+}
 int main() {
-	Complex c1;
+	Complex *c1;
+	c1 = new Complex[10];
+	for (int i = 0; i < 10; i++){
+		c1[i].setImag((float)i + 1.0);
+		c1[i].setReal((float)i + 0.5);
+	}
+	Complex complex_sum; // sum of the complex numbers
+	for (int i = 0; i < 10; i++) {
+		complex_sum.sumC(c1[i].getReal());
+	}
+	cout << "\nSum real: " << complex_sum.getReal();
+	cout << "\nSum imag: " << complex_sum.getImag();
+	complex_sum.~Complex();
+	Complex complex_diff; // difference
+	for (int i = 0; i < 10; i++) {
+		complex_diff.diffC(c1[i].getReal());
+	}
+	cout << "\nDiff real: " << complex_diff.getReal();
+	cout << "\nDiff simag: " << complex_diff.getImag();
+	complex_diff.~Complex();
+	Complex complex_prod; //product
+	for (int i = 0; i < 10; i++) {
+		complex_prod.prodC(c1[i].getReal());
+	}
+	cout << "\nProd real: " << complex_prod.getReal();
+	cout << "\nProd imag: " << complex_prod.getImag();
+	complex_prod.~Complex();
+	Complex complex_div; // division
+	for (int i = 0; i < 10; i++) {
+		complex_div.divC(c1[i].getReal());
+	}
+	cout << "\nDiv real: " << complex_div.getReal();
+	cout << "\nDiv imag: " << complex_div.getImag();
+	complex_div.~Complex();
 
-
-	cin.ignore();
 	cin.get();
+	cin.ignore();
 }
