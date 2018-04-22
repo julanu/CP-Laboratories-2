@@ -1,0 +1,4 @@
+﻿  lab7_pb5.cpp
+c:\users\jula\desktop\cp-lab2\lab7_pb5\lab7_pb5\lab7_pb5.cpp(69): warning C4154: deletion of an array expression; conversion to pointer supplied
+c:\users\jula\desktop\cp-lab2\lab7_pb5\lab7_pb5\lab7_pb5.cpp(125): error C2664: 'void qsort(void *,::size_t,::size_t,_CoreCrtNonSecureSearchSortCompareFunction)': cannot convert argument 4 from 'int' to '_CoreCrtNonSecureSearchSortCompareFunction'
+  c:\users\jula\desktop\cp-lab2\lab7_pb5\lab7_pb5\lab7_pb5.cpp(125): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
