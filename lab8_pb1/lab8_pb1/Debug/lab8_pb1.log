@@ -1,3 +1,2 @@
 ﻿  lab8_pb1_JulaMarius.cpp
-c:\users\jula\desktop\cp-lab2\lab8_pb1\lab8_pb1\lab8_pb1_julamarius.cpp(95): error C2039: 'copyCurrentHour': is not a member of 'CurrentHour'
-  c:\users\jula\desktop\cp-lab2\lab8_pb1\lab8_pb1\lab8_pb1_julamarius.cpp(15): note: see declaration of 'CurrentHour'
+  lab8_pb1.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\lab8_pb1\Debug\lab8_pb1.exe

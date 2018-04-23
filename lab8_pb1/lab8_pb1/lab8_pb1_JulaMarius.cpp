@@ -26,14 +26,20 @@ public:
 	int getHour();
 	int getMinutes();
 	int getSeconds();
-	friend void copyCurrentHour(CurrentHour ob);
+	friend void copy(CurrentHour&, CurrentHour);
 };
 
 //Constructor w/o parameters
 CurrentHour::CurrentHour() {
-	this->hour = 12;
-	this->minute = 30;
-	this->second = 0;
+	time_t t = time(0);  // current time: http://cplusplus.com/reference/clibrary/ctime/time/
+	struct tm * now = localtime(&t);  // http://cplusplus.com/reference/clibrary/ctime/localtime/
+									  // struct tm: http://cplusplus.com/reference/clibrary/ctime/tm/
+	int hour2 = now->tm_hour;
+	int minutes2 = now->tm_min;
+	int seconds2 = now->tm_sec;
+	this->hour = hour2;
+	this->minute = minutes2;
+	this->second = seconds2;
 }
 
 //Constructor w/ parameters
@@ -80,19 +86,29 @@ int CurrentHour::getSeconds() {
 	return this->second;
 }
 
-//Method that copies the content of a CurrentHour object into another instance of the clas
-void copyCurrentHour(CurrentHour ob) {
-	time_t now = time(0);
-
-	// convert now to string form
-	char* dt = ctime(&now);
-	cout << dt;
+//Method that copies the content of a CurrentHour object into another instance of the class
+void copy(CurrentHour &ob, CurrentHour ob2) {
+	ob.hour = ob2.getHour();
+	ob.minute = ob2.getMinutes();
+	ob.second = ob2.getSeconds();
 }
 
 int main() {
-	CurrentHour ob1, ob2;
-	ob2.setHour(13); 
-	ob2.setMinutes(24);
-	ob1.copyCurrentHour(ob2);
+	int hh, mm, ss;
+	cout << "Please set the time for an obj: ";
+	cout << "\nHour:"; cin >> hh;
+	cout << "Minutes:"; cin >> mm;
+	cout << "Seconds:"; cin >> ss;
+	CurrentHour ob1(hh, mm, ss);
+	cout << "\nTime in the first obj established by the user";
+	cout << ob1.getHour() << ":" << ob1.getMinutes() << ":" << ob1.getSeconds() << endl;
+	CurrentHour ob2;
+	cout << "\nTime in the second obj taken from the local time";
+	cout << ob2.getHour() << ":" << ob2.getMinutes() << ":" << ob2.getSeconds() << endl;
+	copy(ob1, ob2);
+	cout << "\nTime in the first object copied from the second obj";
+	cout << ob1.getHour() << ":" << ob1.getMinutes() << ":" << ob1.getSeconds() << endl;
+	cin.get(); 
+	cin.ignore();
 	return 0;
 }
