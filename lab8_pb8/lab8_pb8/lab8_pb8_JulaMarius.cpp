@@ -33,6 +33,7 @@ public:
 	~Fraction();
 	Fraction(int, int);
 	friend Fraction simplify(Fraction);
+	friend Fraction f_add_fraction(Fraction, Fraction);
 };
 
 int Fraction::icount = 0;
@@ -58,7 +59,7 @@ Fraction::Fraction(int newA, int newB) {
 
 //Destructor
 Fraction::~Fraction() {
-	cout << this->icount;
+	cout << "\nicount = " << this->icount;
 	icount -= 1;
 
 }
@@ -83,15 +84,6 @@ void Fraction::setB(int newB) {
 	this->b = newB;
 }
 
-//Method that simplifies a fraction and then returns it
-Fraction simplify(Fraction x) {
-	int c;
-	c = gcd(x.a, x.b);
-	x.a = x.a / c;
-	x.b = x.b / c;
-	return x;
-}
-
 //Greatest common divider
 int gcd(int a, int b)
 {
@@ -103,6 +95,59 @@ int gcd(int a, int b)
 		a = t;
 	}
 	return a;
+}
+
+//Method that simplifies a fraction and then returns it
+Fraction simplify(Fraction x) {
+	int c;
+	c = gcd(x.a, x.b);
+	x.a = x.a / c;
+	x.b = x.b / c;
+	return x;
+}
+
+//Method to sum two fractions
+Fraction f_add_fraction(Fraction x, Fraction y) {
+	Fraction f;
+	if (x.b == y.b) {
+		f.a = x.a + y.a;
+		f.b = x.b;
+		return f;
+	}
+	else
+	{
+		x.a *= y.b;
+		y.a *= x.b;
+		f.a = x.a + y.a;
+		f.b = x.b * y.b;
+		return f;
+	}
+	return f;
+}
+
+//Method to substract two fractions
+
+int main() {
+	int a, b;
+	cout << "\nEnter the denominator and nominator of the first fraction: ";
+	cout << "\na = "; cin >> a;
+	cout << "\nb = "; cin >> b;
+	Fraction ob1(a, b);
+	cout << "\nEnter the denominator and nominator of the second fraction: ";
+	cout << "\na = "; cin >> a;
+	cout << "\nb = "; cin >> b;
+	Fraction ob2(a, b);
+	ob1 = simplify(ob1);
+	cout << "\nFirst fraction simplified: " << ob1.getA() << "/" << ob1.getB();
+	ob2 = simplify(ob2);
+	cout << "\nSecond fraction simplified: " << ob2.getA() << "/" << ob2.getB();
+	Fraction ob_sum;
+	ob_sum = f_add_fraction(ob1, ob2);
+	cout << "\nThe sum of the two fractions is: " << ob_sum.getA() << "/" << ob_sum.getB();
+	Fraction ob_diff;
+	//cout << "\nThe difference of the two fractions is: " << ob_diff.getA() << "/" << ob_dif.getB();
+	cin.get(); cin.ignore();
+	return 0;
 }
 
 
