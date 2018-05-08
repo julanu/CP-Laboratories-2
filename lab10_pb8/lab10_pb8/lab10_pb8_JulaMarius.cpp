@@ -23,7 +23,7 @@ results.
 
 #include <iostream>
 using namespace std;
-
+//prototype for the GCD function
 int gcd(int, int);
 
 class Fraction {
@@ -80,9 +80,8 @@ public:
 	//Method to substract two fractions
 	friend Fraction operator-(Fraction &f1, Fraction &f2) {
 		Fraction f;
-		f.setB(gcd(f1.getB(), f2.getB()));
-		f.setB((f1.getB() * f2.getB()) / f.getB());
-		f.setA(f1.getA() * (f.getB() / f1.getB()) - f2.getB()*(f.getB() / f2.getB()));
+		f.setA((f1.getA() * f2.getB()) - (f1.getB() * f2.getA()));
+		f.setB(f1.getB() * f2.getB());
 		f = f.simplify();
 		return f;
 	}
@@ -102,17 +101,63 @@ public:
 		f = f.simplify();
 		return f;
 	}
+	//Method to overload the pre incremmentation operator
+	friend Fraction operator++(Fraction &f1) {
+		f1.setA(f1.getA() + 1);
+		f1 = f1.simplify();
+		return f1;
+	}
+	//Method to overload the pre decrementation operator
+	friend Fraction operator--(Fraction &f1) {
+		f1.setA(f1.getA() - 1);
+		f1 = f1.simplify();
+		return f1;
+	}
 };
 
+//Derived class
 class Fraction_ext : public Fraction {
-	Fraction_ext(int a, int b) : Fraction(int a, int b) {
+public:
+	Fraction_ext(int a, int b) : Fraction(a, b) {
 		cout << "\nMessage from the derived constructor";
 	}
 };
 
 int main() {
+	int aa, bb;
+	Fraction f1, f2;
+	cout << "\nf1.a = "; cin >> aa;
+	f1.setA(aa);
+	cout << "\nf1.b = "; cin >> bb;
+	f1.setB(bb);
+	cout << "\nf2.a = "; cin >> aa;
+	f2.setA(aa);
+	cout << "\nf2.b = "; cin >> bb;
+	f2.setB(bb);
+	cout << "\nFraction 1: " << f1.getA() << "/" << f1.getB();
+	cout << "\t\tFraction 2: " << f2.getA() << "/" << f2.getB() << "\n";
+	Fraction f11, f12, f13, f14;
+	f11 = f1 + f2;
+	cout << "\nSum = " << f11.getA() << "/" << f11.getB();
+	f12 = f1 - f2;
+	cout << "\nDifference = " << f12.getA() << "/" << f12.getB();
+	f13 = f1 * f2;
+	cout << "\nProduct = " << f13.getA() << "/" << f13.getB();
+	f14 = f1 / f2;
+	cout << "\nDivision = " << f14.getA() << "/" << f14.getB();
 
-
+	cout << "\n\nNew fraction:";
+	cout << "\na = "; cin >> aa;
+	cout << "\nb = "; cin >> bb;
+	Fraction_ext ob1(aa, bb);
+	cout << "\nSecond fraction";
+	cout << "\na = "; cin >> aa;
+	cout << "\nb = "; cin >> bb;
+	++ob1;
+	cout << "\nFraction after using the pre-incrementation operator" << ob1.getA() << "/" << ob1.getB();
+	Fraction ob2(aa, bb);
+	--ob2;
+	cout << "\nFraction after using the pre-decrementation operator" << ob2.getA() << "/" << ob2.getB();
 
 	cin.get();
 	cin.ignore();
