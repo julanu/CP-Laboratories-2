@@ -9,7 +9,7 @@ two integer parameters. For this constructor is verified if b!=0 before to be ca
 the addition, subtraction, multiplication and division operators (+, -, *, /) using member
 methods that simplify (if necessary) the obtained results. Define a class named Fraction_ext
 that inherits in a public mode the Fraction class and has a parameterized constructor that calls
-the constructor from the base class. Use member methods for overloading the preincrementation and ]
+the constructor from the base class. Use member methods for overloading the preincrementation and
 pre-decrementation operators that will add/subtract 1 to the value of a
 Fraction_ext instance. Instantiate two Fraction objects without parameters. Set the attributes
 using values read from the keyboard. Perform the implemented operations and initialize other
@@ -23,6 +23,8 @@ results.
 
 #include <iostream>
 using namespace std;
+
+int gcd(int, int);
 
 class Fraction {
 protected:
@@ -39,37 +41,83 @@ public:
 	void setA(int a) {
 		this->a = a;
 	}
-	void setB(int b) { 
+	void setB(int b) {
 		this->b = b;
 	}
-
-};
-
-//Constructor  w/o  parameters
-Fraction::Fraction() {
-	this->a = 0;
-	this->b = 1;
-}
-
-//Constructor  w/  parameters
-Fraction::Fraction(int  newA, int  newB) {
-	if (b != 0) {
-		this->a = newA;
-		this->b = newB;
-	}
-	else {
-		this->a = newA;
+	//Constructor  w/o  parameters
+	Fraction() {
+		this->a = 0;
 		this->b = 1;
 	}
-}
+	//Constructor  w/  parameters
+	Fraction(int  newA, int  newB) {
+		if (b != 0) {
+			this->a = newA;
+			this->b = newB;
+		}
+		else {
+			this->a = newA;
+			this->b = 1;
+		}
+	}
+	//Method to simplify a fraction
+	Fraction simplify() {
+		int  c;
+		c = gcd(a, b);
+		a = a / c;
+		b = b / c;
+		return  *this;
+	}
+	//Method to sum two fractions
+	friend Fraction operator+(Fraction &f1, Fraction &f2) {
+		Fraction f;
+		f.setB(gcd(f1.getB(), f2.getB()));
+		f.setB((f1.getB() * f2.getB()) / f.getB());
+		f.setA(f1.getA() * (f.getB() / f1.getB()) + f2.getB()*(f.getB() / f2.getB()));
+		f = f.simplify();
+		return f;
+	}
+	//Method to substract two fractions
+	friend Fraction operator-(Fraction &f1, Fraction &f2) {
+		Fraction f;
+		f.setB(gcd(f1.getB(), f2.getB()));
+		f.setB((f1.getB() * f2.getB()) / f.getB());
+		f.setA(f1.getA() * (f.getB() / f1.getB()) - f2.getB()*(f.getB() / f2.getB()));
+		f = f.simplify();
+		return f;
+	}
+	//Method to multiply two fractions
+	friend Fraction operator*(Fraction &f1, Fraction &f2) {
+		Fraction f;
+		f.setA(f1.getA() * f2.getA());
+		f.setB(f1.getB() * f2.getB());
+		f = f.simplify();
+		return f;
+	}
+	//Method to divide two fractions
+	friend Fraction operator/(Fraction &f1, Fraction &f2) {
+		Fraction f;
+		f.setA(f1.getA() * f2.getB());
+		f.setB(f1.getB() * f2.getA());
+		f = f.simplify();
+		return f;
+	}
+};
 
-//Method to simplify a fraction using the cmmmdc function
-Fraction Fraction::simplify() {
-	int  c;
-	c = gcd(a, b);
-	a = a / c;
-	b = b / c;
-	return  *this;
+class Fraction_ext : public Fraction {
+	Fraction_ext(int a, int b) : Fraction(int a, int b) {
+		cout << "\nMessage from the derived constructor";
+	}
+};
+
+int main() {
+
+
+
+	cin.get();
+	cin.ignore();
+
+	return 0;
 }
 
 //greatest common divider
@@ -83,8 +131,4 @@ int  gcd(int  a, int  b)
 		a = t;
 	}
 	return  a;
-}
-
-void Fraction::operator+(Fraction f1, Fraction f2) {
-
 }
