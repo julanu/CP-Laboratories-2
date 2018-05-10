@@ -14,24 +14,31 @@ keyboard. Examine the error given by the attempt of instantiating the base class
 using namespace std;
 
 class myString {
-	int x;
 public:
-	virtual void test() = 0;
-	virtual char * ft_strcat(char tab[], char tab2[]) { 
-		return tab;
-	}
-//	virtual void ft_interlace();
-//	virtual char * ft_reverse(char []);
+	virtual void ft_strcat(char [], char []) { }
+    virtual void ft_interlace(char [], char []) { }
+	virtual void ft_reverse(char []) { }
 };
 
 class Derived : public myString {
-	int y;
 public:
-	void test() { cout << "test\n"; }
-
-	char * ft_strcat(char tab[], char tab2[]) {
+	//Method to concatenate two char arrays
+	void ft_strcat(char tab[], char tab2[]) {
 		strcat(tab, tab2);
-		return tab;
+	}
+	//Methode to reverse a char array
+	void ft_reverse(char tab[]) {
+		for (int i = 0; i < strlen(tab); i++)
+		{
+			char temp;
+			temp = tab[i];
+			tab[i] = tab[strlen(tab) - 1 - i];
+			tab[strlen(tab) - 1 - i] = temp;
+		}
+	}
+	//Method to interlace two arrays
+	void ft_interlace(char tab[], char tab2[]) {
+		for
 	}
 };
 

@@ -1,4 +1,2 @@
 ﻿  lab11_pb5_JulaMarius.cpp
-lab11_pb5_JulaMarius.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Animal::mananca(void)" (?mananca@Animal@@UAEXXZ)
-lab11_pb5_JulaMarius.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Animal::doarme(void)" (?doarme@Animal@@UAEXXZ)
-C:\Users\jula\Desktop\CP-LAB2\lab11_pb5\Debug\lab11_pb5.exe : fatal error LNK1120: 2 unresolved externals
+  lab11_pb5.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\lab11_pb5\Debug\lab11_pb5.exe

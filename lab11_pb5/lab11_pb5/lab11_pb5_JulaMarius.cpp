@@ -14,33 +14,45 @@ contain instances of the derived classes (if that’s possible). If not, find an a
 #include <malloc.h>
 using namespace std;
 
+//Abstract base class
 class Animal {
 public:
 	virtual void respira() = 0; // Pure virtual method
-    virtual void mananca(); // Virtual methods
-	virtual void doarme();
+	virtual void mananca() { } // Virtual methods
+	virtual void doarme() { }
 };
 
+//Derived class
 class Caine : public Animal {
 public:
-	virtual void respira() { }
-	virtual void mananca() { } 
-	virtual void doarme() {	}
+	void respira() { }
+	void mananca() {
+		cout << "mananca - caine \n";
+	}
 };
 
-//class Peste : public Animal {
-//public:
-//	virtual void mananca() {
-//		cout << "mananca";
-//	}
-//};
+//Derived class 
+class Peste : public Animal {
+public:
+	void respira() {
+		cout << "respira - peste\n";
+	}
+};
 
 int main() {
+	cout << "Instantiating objects and calling the methods\n";
 	Caine ob;
-	ob.doarme();
 	ob.mananca();
-
-
+	Peste ob1;
+	ob1.respira();
+	Animal *animals[3];
+	animals[0] = &Caine();
+	animals[1] = &Peste();
+	animals[2] = &Caine();
+	cout << "Now we will call the methods from the uni-dim table of objects\n";
+	animals[0]->mananca();
+	animals[1]->respira();
+	animals[2]->mananca();
 	cin.get();
 	cin.ignore();
 
