@@ -38,17 +38,18 @@ public:
 	}
 	//Method to interlace two arrays
 	void ft_interlace(char tab[], char tab2[]) {
-		for
+		char inter[MAX];
+		for (int i = 0; i < strlen(tab); i++)
+		{
+
+		}
 	}
 };
 
 int main()
 {
 	Derived ob;
-	ob.test();
-	char tab1[MAX], tab2[MAX];
-	strcpy(tab1, "da"); strcpy(tab2, "nu");
-	cout << ob.ft_strcat(tab1, tab2);
+	
 	cin.get();
 	cin.ignore();
 
