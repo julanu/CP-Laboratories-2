@@ -72,7 +72,7 @@ int main() {
 	ob.calcArea(c1, c2, c3, c4);
 	ob.calcPerimeter(c1, c2, c3, c4);
 
-
+	//COMPLETED IN CUMULATED LABS
 
 	cin.get();
 	return 0;

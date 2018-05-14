@@ -1,2 +1,5 @@
 ﻿  lab11_pb6_JulaMarius.cpp
+c:\users\jula\desktop\cp-lab2\lab11_pb6\lab11_pb6\lab11_pb6_julamarius.cpp(31): warning C4018: '<': signed/unsigned mismatch
+c:\users\jula\desktop\cp-lab2\lab11_pb6\lab11_pb6\lab11_pb6_julamarius.cpp(42): warning C4018: '<': signed/unsigned mismatch
+c:\users\jula\desktop\cp-lab2\lab11_pb6\lab11_pb6\lab11_pb6_julamarius.cpp(51): warning C4018: '<': signed/unsigned mismatch
   lab11_pb6.vcxproj -> C:\Users\jula\Desktop\CP-LAB2\lab11_pb6\Debug\lab11_pb6.exe

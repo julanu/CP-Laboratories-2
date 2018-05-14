@@ -1,0 +1,19 @@
+﻿  lab12_pb5_Jula Marius.cpp
+c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(58): error C2668: 'Complex::Complex': ambiguous call to overloaded function
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(28): note: could be 'Complex::Complex(double,double)'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(24): note: or       'Complex::Complex(void)'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(58): note: while trying to match the argument list '()'
+c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(63): error C2668: 'Complex::Complex': ambiguous call to overloaded function
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(28): note: could be 'Complex::Complex(double,double)'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(24): note: or       'Complex::Complex(void)'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(63): note: while trying to match the argument list '()'
+c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(64): error C2248: 'Complex::re': cannot access protected member declared in class 'Complex'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(21): note: see declaration of 'Complex::re'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(19): note: see declaration of 'Complex'
+c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(65): error C2248: 'Complex::im': cannot access protected member declared in class 'Complex'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(22): note: see declaration of 'Complex::im'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(19): note: see declaration of 'Complex'
+c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(87): error C2668: 'Complex::Complex': ambiguous call to overloaded function
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(28): note: could be 'Complex::Complex(double,double)'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(24): note: or       'Complex::Complex(void)'
+  c:\users\jula\desktop\cp-lab2\lab12_pb5\lab12_pb5\lab12_pb5_jula marius.cpp(87): note: while trying to match the argument list '()'
