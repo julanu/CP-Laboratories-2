@@ -21,10 +21,6 @@ protected:
 	double re;
 	double im;
 public:
-	Complex() {
-		int a; // Done so we avoid some errors
-		a = 0; // code has no effect whatsoever
-	}
 	Complex(double re = 0, double im = 0) {
 		this->re = re;
 		this->im = im;
@@ -34,6 +30,12 @@ public:
 	}
 	void setIm(double im) {
 		this->im = im;
+	}
+	double getRe() {
+		return this->re;
+	}
+	double getIm() {
+		return this->im;
 	}
 	friend ostream& operator<<(ostream& stream, Complex obj) {
 		cout << "\nThe complex number is: ";
@@ -55,25 +57,19 @@ protected:
 	double y;
 	char c; // Colour
 public:
-    	Point()  { // Constructor w/o parameters
-		this->x = 1.;
-		this->y = 1.;
-		this->c = 'r'; // r for red
-	}
-	//THE PROBLEM SEEMS TO BE THIS CONSTRUCTOR
-	Point(Complex obj, char c) { // Constructor w/ parameters
-		this->x = obj.re;
-		this->y = obj.im;
+	Point(double re = 0, double im = 0, char c = 'r') { // Constructor w/ parameters
+		this->x = re;
+		this->y = im;
 		this->c = c;
 	}
 	friend ostream& operator<<(ostream& stream, Point obj) {
-		cout << "The point has the coordinates: ";
+		cout << "The point has the coordinates ";
 		stream << "( " << obj.x << " , " << obj.y << " )";
 		stream << " and the colour: " << obj.c;
 		return stream;
 	}
 	friend istream& operator>>(istream& stream, Point& obj) {
-		cout << "Enter the X coordinate: ";
+		cout << "\nEnter the X coordinate: ";
 		stream >> obj.x;
 		cout << "Enter the Y coordinate: ";
 		stream >> obj.y;
@@ -88,9 +84,13 @@ int main() {
 	Complex ob1;
 	cin >> ob1;
 	cout << ob1;
-
-
-
+	Point ob2;
+	cin >> ob2;
+	cout << ob2;
+	//To check on upcasting!!
+	Complex pDerived = &Point;
+	cin >> pDerived;
+	cout << pDerived;
 
 	cin.get();
 	cin.ignore();
