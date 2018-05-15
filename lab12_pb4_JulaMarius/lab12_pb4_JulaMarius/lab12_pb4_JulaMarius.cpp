@@ -13,6 +13,7 @@ accelerated linear motion. Instantiate the class and use the defined members.
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 class AcceleratedMovement {
@@ -24,10 +25,12 @@ public:
 	AcceleratedMovement(double d0, double v0) { // Constructor
 		dc = d0;
 		vc = v0;
-		a = 1; // modify
+		a = -1; // modify
 	}
 	void determineMovement(int s) { // Method to re-calculate dc and vc based on a nr. of seconds
-		// ...
+		a = vc / (double)s;
+		vc = vc + a *(double) s;
+		dc = vc * (double)s;
 	}
 	friend istream& operator>>(istream& stream, AcceleratedMovement obj) {
 		cout << "Enter the current distance: ";
@@ -57,9 +60,9 @@ int main()
 	cout << "Enter the value of the current speed: ";
 	cin >> vc;
 	AcceleratedMovement obj(dc, vc);
-	cout << "\nMyObject\n";
+	cout << "\nMy Object\n";
 	cout << obj;
-	cout << "Enter a number of seconds to re-calculate the speed and distance: ";
+	cout << "\n\nEnter a number of seconds to re-calculate the speed and distance: ";
 	cin >> sec;
 	obj.determineMovement(sec);
 	cout << obj;

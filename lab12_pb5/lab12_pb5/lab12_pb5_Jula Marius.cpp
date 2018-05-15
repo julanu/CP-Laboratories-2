@@ -87,11 +87,9 @@ int main() {
 	Point ob2;
 	cin >> ob2;
 	cout << ob2;
-	//To check on upcasting!!
-	Complex pDerived = &Point;
-	cin >> pDerived;
-	cout << pDerived;
-
+	Complex * p = &ob2;
+	cout << "\nUPCASTING";
+	cout << *p;
 	cin.get();
 	cin.ignore();
 	
