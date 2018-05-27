@@ -87,8 +87,8 @@ int main() {
 	Point ob2;
 	cin >> ob2;
 	cout << ob2;
-	Complex * p = &ob2;
-	cout << "\nUPCASTING";
+	Complex * p = &ob3;
+	cout << "\nUPCASTING\n";
 	cout << *p;
 	cin.get();
 	cin.ignore();
